@@ -4,6 +4,7 @@ Simple game: Tons of Goldfish will swim around you(their food) Requires CJSON+Te
 ```shell
 git clone https://github.com/daex3/tegrine ../tegrine
 sudo ln -s $(PWD)/../tegrine /usr/include/tegrine
-cp goldfish ~/.tegrine/saved/goldfish
+mkdir -p ~/.tegrine/saved
+cp goldfish ~/.tegrine/saved
 make
 ```
