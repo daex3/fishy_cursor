@@ -1,9 +1,7 @@
 #include <unistd.h>
 #include <pthread.h>
 
-#define VERTEX
 #define PIXELS
-#define SHAPES
 
 #include <tegrine/instances.c>
 #include <tegrine/term.c>
@@ -36,7 +34,7 @@ void add_l(int *x, int max) {
 
 // Slow
 size_t get_pixel_index_at_pos(D2 *add, Pixels *px, D2 *pos) {
-	for(size_t i = 0; i < px->len; ++i) {
+	for(int i = 0; i < px->len; ++i) {
 		Px *p = &px->x[i];
 
 		if (p->pos.x + add->x == pos->x && p->pos.y + add->y == pos->y)
@@ -55,8 +53,7 @@ void * game(void *_) {
 			Instance *ins = add_Instance(
 				&z.te.x,
 				&z.cur,
-				&z.size,
-				&z.color
+				&z.size
 			);
 
 			ins->pos = (D2){
@@ -66,7 +63,7 @@ void * game(void *_) {
 			ins->pixels = z.te.x.x[0].pixels;
 		}
 
-		for(size_t i = 0; i < z.te.x.len; ++i) {
+		for(int i = 0; i < z.te.x.len; ++i) {
 			Instance *ins = &z.te.x.x[i];
 
 			// Movement
