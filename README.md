@@ -8,6 +8,6 @@ mkdir -p ~/.tegrine/saved
 cp goldfish ~/.tegrine/saved
 make
 ```
-\#\# Libs
+## Libs
 - CJSON
 - Tegrine
